@@ -1,7 +1,19 @@
-import React from 'react';
-import Discover from './Discover';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes as Switch,
+  Route,
+} from "react-router-dom";
+import Discover from "./Discover";
+import Login from "./Login";
 
 export default function Routes() {
-  // Here you'd return an array of routes
-  return <Discover />;
+  return (
+    <Router>
+      <Switch>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Discover />} />
+      </Switch>
+    </Router>
+  );
 }
